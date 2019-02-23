@@ -1,0 +1,22 @@
+{
+	"triplet_hard_mining": 0,
+	"decay_steps": 15000,
+	"max_steps": 25000,
+    "reg_M_weight": 1e-4,
+	"learning_rate": 1e-4,
+	"M_dropout" : 0.01,
+	"logit_weight" : 0.1,
+	"visit_weight" : 2,
+	"M_depth_struct": [
+	[64, "sigmoid"],
+	[32, "sigmoid"],
+	[32, "sigmoid", "FC"],
+	[16, "sigmoid"],
+	[16, "sigmoid"] 
+	],
+    "mnist_training_reg": [
+		[[
+		[["emb", "logit", "M"], ["logit", "M","Msemisup_triplet2_sig", "M_triplet", "Msemisup_triplet", "M_sup"]]
+		], 0]
+    ]
+}

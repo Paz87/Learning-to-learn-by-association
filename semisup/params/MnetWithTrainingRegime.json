@@ -1,0 +1,22 @@
+{
+	"triplet_hard_mining": 0,
+	"decay_steps": 40000,
+	"max_steps": 20000,
+    "reg_M_weight": 1e-3,
+	"M_dropout" : 0.01,
+	"M_depth_struct": [
+	[64, "sigmoid"],
+	[32, "sigmoid"],
+	[32, "sigmoid"],
+	[16, "sigmoid"],
+	[16, "sigmoid"] 
+	],
+    "training_regime": [
+		[[
+		[["emb", "logit", "M"], ["logit", "M", "M_sup"]]
+		], 10000],
+		[[
+		[["emb", "logit"], ["logit", "M","Msemisup_triplet2_sig"]]
+		], 0]
+    ]
+}
